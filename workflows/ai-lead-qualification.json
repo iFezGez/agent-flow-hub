@@ -1,0 +1,64 @@
+{
+  "name": "AI Lead Qualification & Triage",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-ingestion",
+        "options": {}
+      },
+      "name": "Webhook: New Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "prompt": "You are a sales qualification agent. Analyze the following lead query: {{ $node[\"Webhook: New Lead\"].json[\"body\"][\"message\"] }}. Determine if they need AI Automation, Infrastructure, or General Support. Output JSON: { \"category\": \"string\", \"value_score\": 1-10 }"
+      },
+      "name": "AI Agent: Analysis",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $node[\"AI Agent: Analysis\"].json[\"value_score\"] }}",
+              "operation": "largerEqual",
+              "value2": 7
+            }
+          ]
+        }
+      },
+      "name": "Filter: High Value",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "channel": "sales-alerts",
+        "text": "🚀 High-Value Lead Qualified: {{ $node[\"Webhook: New Lead\"].json[\"body\"][\"name\"] }} (Score: {{ $node[\"AI Agent: Analysis\"].json[\"value_score\"] }})"
+      },
+      "name": "Slack: Alert Team",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [850, 200]
+    }
+  ],
+  "connections": {
+    "Webhook: New Lead": {
+      "main": [[{ "node": "AI Agent: Analysis", "type": "main", "index": 0 }]]
+    },
+    "AI Agent: Analysis": {
+      "main": [[{ "node": "Filter: High Value", "type": "main", "index": 0 }]]
+    },
+    "Filter: High Value": {
+      "main": [[{ "node": "Slack: Alert Team", "type": "main", "index": 0 }]]
+    }
+  }
+}
