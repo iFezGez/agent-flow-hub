@@ -1,47 +1,63 @@
-# 🏗️ Vesta Labs: Enterprise-Grade Infrastructure Blueprints
+# 🤖 Agent Flow Hub: Autonomous AI & Business Systems
 
-[![Proxmox](https://img.shields.io/badge/Virtualization-Proxmox-orange?logo=proxmox)](https://www.proxmox.com)
-[![Docker](https://img.shields.io/badge/Container-Docker-blue?logo=docker)](https://www.docker.com)
-[![Security](https://img.shields.io/badge/Security-First-green?logo=google-cloud)](https://vestasec.com)
-
-Welcome to the technical hub of **Vesta Security LATAM S.A.** This repository is more than just code; it is a collection of **Standardized Reference Architectures** (Blueprints) for building secure, scalable, and automated business environments.
+> **Advanced Business Automation: Scaling operations through AI Agents, n8n Workflows, and Secure Infrastructure.**
 
 ---
 
-## 🚀 Why This Matters
-For businesses and developers, this repository provides:
-- **Resilience:** Pre-tested configurations for high-availability clusters.
-- **Speed:** Automated Bash scripts to deploy complex stacks in minutes.
-- **Security:** "Least Privilege" design integrated with Vaultwarden and Mesh VPNs.
+## 🚨 The Problem: "Manual Operations are Scaling Barriers"
+Businesses today are trapped in repetitive, manual tasks that drain resources and increase error rates:
+- ❌ **Disconnected Data:** Manual transfers between CRM, Emails, and ERPs.
+- ❌ **Slow Lead Response:** Losing customers due to delayed initial contact.
+- ❌ **Security Gaps:** Sensitive business logic running on non-secure or unmanaged environments.
 
-## 📂 Repository Structure
-```
-labs/
-└── vesta-lab/
-    ├── docs/            # Technical documentation (.md)
-    ├── assets/          # Architecture Diagrams & Screenshots
-    ├── exports/         # Real production-ready configs (MikroTik, PBS)
-    ├── scripts/         # Modular Bash automation scripts
-    ├── templates/       # VM skeletons, Cloud-init, and Docker Compose
-    └── mkdocs.yml       # MkDocs configuration for live site
-```
-
-## 🛠️ Tech Stack & Expertise
-- **Hypervisors:** Proxmox VE 8.x Clusters, VMware ESXi.
-- **Networking:** MikroTik (VLANs/Routing), Tailscale & WireGuard.
-- **Storage:** TrueNAS SCALE (ZFS Pools), PBS (Proxmox Backup Server).
-- **Orchestration:** Docker, Portainer, and custom CI/CD via GitLab.
-- **Monitoring:** Prometheus, Grafana, and Uptime Kuma dashboards.
-
-## 🌐 Live Documentation
-Explore the full lab details and implementation guides here:  
-👉 [https://ifezgez.github.io/labs/](https://ifezgez.github.io/labs/)
+## ⚙️ The Solution: "The Autonomous Blueprint"
+`Agent Flow Hub` is a collection of production-ready **Automation Blueprints** designed to transform manual processes into autonomous systems. By merging **AI Logic (n8n/Python)** with **Enterprise Infrastructure (Proxmox/Docker)**, I build systems that work 24/7 without friction.
 
 ---
 
-## 👤 Maintainer
-**Ignacio Fernandez** | CEO @ Vesta Security LATAM  
-[VestaSec.com](https://vestasec.com) | [LinkedIn](https://www.linkedin.com/in/ignacio-fernandez-vesta/)
+## 💼 Featured Case Studies & Blueprints
+
+### 1. 🤖 Intelligent Customer Support Agent
+*Complete AI Agent that qualifies leads and provides support on WhatsApp/Slack.*
+- **Problem:** 24/7 support is expensive and humans are slow for initial triage.
+- **Impact:** Instant response time (0s delay) and 80% automated qualification.
+- **Tech:** n8n, OpenAI GPT-4o, WhatsApp Cloud API.
+- 👉 [View Blueprint & Workflow](./workflows/ai-support-agent)
+
+### 2. 🛡️ Secure Infrastructure Stack (One-Click)
+*Hardened environment for hosting sensitive automations and data.*
+- **Problem:** Running AI tools on insecure cloud instances.
+- **Impact:** 100% data sovereignty and "Least Privilege" security access.
+- **Tech:** Proxmox VE, Tailscale Mesh VPN, Vaultwarden, NPM.
+- 👉 [View Infrastructure Blueprint](./blueprints/infrastructure)
+
+### 3. 🧾 Automated Invoice & Lead Ingestion
+*Extract data from PDFs/Images and sync with business systems automatically.*
+- **Impact:** Eliminates 12+ hours of manual data entry per week.
+- **Tech:** Python (Tesseract/GPT), n8n, Odoo/WooCommerce API.
+- 👉 [View Automation Script](./blueprints/automation)
 
 ---
-**Standardization is the key to reliability. Use these blueprints to scale your infrastructure with confidence.**
+
+## 🎥 Demos
+*(GIFs of workflows running will be added to the `/demos` folder)*
+
+---
+
+## 🛠️ Tech Stack
+- **Orchestration:** n8n, Zapier, Custom Python Agents.
+- **AI Models:** OpenAI, Anthropic, Local LLMs (Ollama).
+- **Core Ops:** Docker, Portainer, Proxmox VE.
+- **Communication:** WhatsApp API, Slack, Telegram, Email.
+
+---
+
+## 📩 Ready to Automate?
+I help businesses scale by deploying these exact systems tailored to their specific needs.
+
+- **Hire me on:** [Upwork](https://www.upwork.com/freelancers/~investa) | [Fiverr](https://www.fiverr.com/ifezgez)
+- **LinkedIn:** [Ignacio Fernandez](https://www.linkedin.com/in/ignacio-fernandez-vesta/)
+- **Direct Contact:** [Tu Email Profesional Aquí]
+
+---
+*"Build it once, Build it right, Automate everything else."*
